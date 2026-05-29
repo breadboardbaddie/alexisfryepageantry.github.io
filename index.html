@@ -519,6 +519,25 @@
     color: var(--ink-mid);
   }
 
+  /* Photo credit line — discreet attribution */
+  .slide-credit {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: .62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+    opacity: .75;
+    z-index: 3;
+  }
+  .slide.has-image .slide-credit {
+    color: var(--bg);
+    opacity: .7;
+  }
+
   /* Slideshow controls */
   .slide-controls {
     display: flex;
@@ -1136,6 +1155,7 @@
   section.section-dark .slide-meta { color: rgba(248, 248, 246, 0.78); }
   section.section-dark .slide h3 { color: var(--bg); }
   section.section-dark .slide p { color: rgba(248, 248, 246, 0.82); }
+  section.section-dark .slide-credit { color: rgba(248, 248, 246, 0.55); }
   /* has-image dark gradient stays — needed for legibility over photos */
 
   section.section-dark .dot { background: rgba(248, 248, 246, 0.28); }
@@ -1744,28 +1764,23 @@
   // ============================================================
   const appearances = [
     {
-      title: "National Anthem Performance",
-      meta: "Local Football Game · Massachusetts",
-      description: "Singing the national anthem before kickoff — one of my favorite ways to represent the Commonwealth and the title.",
-      image: ""
+      title: "Veterans Day Performance",
+      meta: "Plymouth Council on Aging · Plymouth, MA",
+      description: "Performing the national anthem and God Bless the USA at the Plymouth Council on Aging's Veterans Day ceremony — a privilege to honor those who served.",
+      image: "veterans-day.jpg"
     },
     {
-      title: "Grow With STEM Workshop",
-      meta: "Community Library · Massachusetts",
-      description: "Hands-on STEM activities and a candid talk about numeric dyslexia — proof that learning differences don't close doors, they open new ones.",
-      image: ""
+      title: "Grow With STEM at the Craft Fair",
+      meta: "Bristol Plymouth Craft Fair · Volunteer Club Event",
+      description: "Selling DIY hydraulic spy gun kits to fund Grow With STEM programming — every kit launched another conversation about engineering with a curious kid.",
+      image: "stem-craft-fair.jpg"
     },
     {
-      title: "Classroom Visit & Career Talk",
-      meta: "Elementary School · Massachusetts",
-      description: "Reading with students, answering questions about engineering, and showing them what's possible when curiosity meets persistence.",
-      image: ""
-    },
-    {
-      title: "Community Volunteer Day",
-      meta: "Local Charity Event · Massachusetts",
-      description: "Volunteering alongside community members in service of a cause greater than any title — and that's exactly the point of the crown.",
-      image: ""
+      title: "Lighthouse Animal Shelter Adoption Event",
+      meta: "Sakonnet Vineyards · Little Compton, RI",
+      description: "Volunteering with the Lighthouse Animal Shelter at Sakonnet Vineyards and introducing my foster dog Muriel — six dogs found their forever homes that weekend.",
+      image: "sakonnet-shelter.jpg",
+      credit: "Photo by Christian Silvia / East Bay RI"
     }
   ];
 
@@ -1791,6 +1806,7 @@
         <div class="slide-meta">${item.meta}</div>
         <h3>${item.title}</h3>
         <p>${item.description}</p>
+        ${item.credit ? `<div class="slide-credit">${item.credit}</div>` : ''}
       `;
       slideshow.appendChild(slide);
 
