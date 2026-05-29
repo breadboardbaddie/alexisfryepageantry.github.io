@@ -4,23 +4,25 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Alexis Frye — Miss Massachusetts Teen Coed</title>
-<meta name="description" content="Official site of Alexis Frye, Miss Massachusetts Teen Coed. Book appearances, request a school or scout visit, and learn about the Grow with STEM platform." />
+<meta name="description" content="Official site of Alexis Frye, Miss Massachusetts Teen Coed. Book STEM and education appearances, learn about the Grow With STEM platform, and become a sponsor on the road to nationals." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
   :root {
-    --bg: #fafaf8;
-    --bg-alt: #f0efeb;
-    --ink: #0e0e10;
-    --ink-mid: #4a4a4f;
-    --ink-soft: #767679;
-    --red: #c8202d;
-    --red-deep: #9a1822;
-    --rule: rgba(14, 14, 16, 0.10);
-    --rule-strong: rgba(14, 14, 16, 0.22);
+    --bg: #FFFFFF;
+    --ink: #0e0e0e;
+    --ink-mid: rgba(14, 14, 14, 0.72);
+    --ink-soft: rgba(14, 14, 14, 0.48);
+    --burgundy: #662626;
+    --burgundy-deep: #421010;
+    --burgundy-light: #9a4040;
+    --rule: rgba(14, 14, 14, 0.10);
+    --rule-mid: rgba(14, 14, 14, 0.22);
+    --rule-strong: rgba(14, 14, 14, 0.45);
+    --burgundy-rule: rgba(102, 38, 38, 0.35);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,12 +37,10 @@
     overflow-x: hidden;
   }
 
-  .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.02em; }
-
   /* === NAV === */
   header.nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(250, 250, 248, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--rule);
@@ -64,12 +64,12 @@
   .brand .dot {
     display: inline-block;
     width: 7px; height: 7px;
-    background: var(--red);
+    background: var(--burgundy);
     border-radius: 50%;
   }
   nav ul {
-    display: flex; gap: 2.2rem; list-style: none;
-    font-size: .78rem;
+    display: flex; gap: 1.8rem; list-style: none;
+    font-size: .76rem;
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-weight: 500;
@@ -84,10 +84,10 @@
   nav a::after {
     content: "";
     position: absolute; left: 0; bottom: -2px;
-    width: 0; height: 1px; background: var(--red);
+    width: 0; height: 1px; background: var(--burgundy);
     transition: width .25s ease;
   }
-  nav a:hover { color: var(--red); }
+  nav a:hover { color: var(--burgundy); }
   nav a:hover::after { width: 100%; }
 
   .menu-toggle {
@@ -111,12 +111,12 @@
     font-size: .72rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--red);
+    color: var(--burgundy);
     font-weight: 600;
     margin-bottom: 2rem;
     display: flex; align-items: center; gap: .8rem;
   }
-  .eyebrow .line { width: 28px; height: 1px; background: var(--red); }
+  .eyebrow .line { width: 28px; height: 1px; background: var(--burgundy); }
 
   h1.title {
     font-family: 'Fraunces', serif;
@@ -130,12 +130,12 @@
   h1.title em {
     font-style: italic;
     font-weight: 400;
-    color: var(--red);
+    color: var(--burgundy);
   }
   .hero-tag {
     font-size: 1.05rem;
     color: var(--ink-mid);
-    max-width: 28rem;
+    max-width: 30rem;
     margin-bottom: 2.5rem;
     line-height: 1.6;
   }
@@ -178,10 +178,10 @@
     border: 1px solid transparent;
   }
   .btn-primary {
-    background: var(--ink);
+    background: var(--burgundy);
     color: var(--bg);
   }
-  .btn-primary:hover { background: var(--red); }
+  .btn-primary:hover { background: var(--burgundy-deep); }
   .btn-ghost {
     background: transparent;
     color: var(--ink);
@@ -197,8 +197,9 @@
   .portrait {
     aspect-ratio: 4/5;
     overflow: hidden;
-    background: var(--bg-alt);
+    background: var(--bg);
     position: relative;
+    border: 1px solid var(--rule);
   }
   .portrait img {
     width: 100%; height: 100%;
@@ -210,7 +211,7 @@
   .portrait-badge {
     position: absolute;
     bottom: -1px; left: -1px;
-    background: var(--red);
+    background: var(--burgundy);
     color: var(--bg);
     padding: 1.2rem 1.5rem;
     font-size: .68rem;
@@ -228,40 +229,41 @@
     margin-bottom: .15rem;
   }
 
-  /* Marquee strip */
+  /* === MARQUEE — white with hairline rules === */
   .marquee {
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--bg);
+    color: var(--ink);
     padding: 1.4rem 0;
     overflow: hidden;
     white-space: nowrap;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
+    border-top: 1px solid var(--rule-mid);
+    border-bottom: 1px solid var(--rule-mid);
   }
   .marquee-track {
     display: inline-flex;
     gap: 3rem;
-    animation: scroll 35s linear infinite;
+    animation: scroll 38s linear infinite;
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-size: 1.35rem;
     font-weight: 300;
+    color: var(--ink);
   }
   .marquee-track span { display: inline-flex; align-items: center; gap: 3rem; }
-  .marquee-track .star { color: var(--red); font-style: normal; }
+  .marquee-track .star { color: var(--burgundy); font-style: normal; font-size: .9rem; }
   @keyframes scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
 
   /* === SECTIONS === */
-  section { padding: 7rem 2.5rem; position: relative; }
+  section { padding: 7rem 2.5rem; position: relative; background: var(--bg); }
   .section-inner { max-width: 1200px; margin: 0 auto; }
   .section-eyebrow {
     font-size: .72rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--red);
+    color: var(--burgundy);
     margin-bottom: 1.2rem;
     font-weight: 600;
   }
@@ -274,10 +276,9 @@
     margin-bottom: 1.5rem;
     color: var(--ink);
   }
-  h2 em { font-style: italic; color: var(--red); font-weight: 400; }
+  h2 em { font-style: italic; color: var(--burgundy); font-weight: 400; }
 
   /* === ABOUT === */
-  .about { background: var(--bg-alt); }
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -294,7 +295,7 @@
 
   .credentials {
     margin-top: 2.5rem;
-    border-top: 1px solid var(--rule-strong);
+    border-top: 1px solid var(--rule-mid);
   }
   .credentials li {
     list-style: none;
@@ -331,23 +332,27 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    border-top: 1px solid var(--rule-strong);
-    border-left: 1px solid var(--rule-strong);
+    border-top: 1px solid var(--rule-mid);
+    border-left: 1px solid var(--rule-mid);
   }
   .pcard {
     padding: 2.5rem 2rem;
-    border-right: 1px solid var(--rule-strong);
-    border-bottom: 1px solid var(--rule-strong);
-    transition: background .25s ease;
+    border-right: 1px solid var(--rule-mid);
+    border-bottom: 1px solid var(--rule-mid);
+    transition: all .25s ease;
     position: relative;
   }
-  .pcard:hover { background: var(--bg-alt); }
+  .pcard:hover {
+    border-top: 2px solid var(--burgundy);
+    margin-top: -1px;
+  }
+  .pcard:hover h4 { color: var(--burgundy); }
   .pcard-num {
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--red);
+    color: var(--burgundy);
     margin-bottom: 2rem;
   }
   .pcard h4 {
@@ -357,6 +362,7 @@
     letter-spacing: -0.01em;
     margin-bottom: 1rem;
     color: var(--ink);
+    transition: color .2s ease;
   }
   .pcard p {
     font-size: .96rem;
@@ -364,89 +370,336 @@
     line-height: 1.6;
   }
 
-  .platform-cta {
-    margin-top: 4rem;
-    padding: 4rem 3rem;
-    background: var(--ink);
-    color: var(--bg);
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 3rem;
-    align-items: center;
+  /* Platform pull quote — replaces dark CTA */
+  .platform-quote {
+    margin-top: 5rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--rule-mid);
+    border-bottom: 1px solid var(--rule-mid);
   }
-  .platform-cta blockquote {
+  .platform-quote blockquote {
     font-family: 'Fraunces', serif;
     font-style: italic;
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 300;
-    line-height: 1.3;
+    line-height: 1.25;
     letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 42rem;
+    margin: 0 auto;
   }
-  .platform-cta blockquote::before {
+  .platform-quote blockquote::before {
     content: "“";
-    color: var(--red);
-    font-size: 3rem;
+    color: var(--burgundy);
+    font-size: 1.4em;
     line-height: 0;
-    margin-right: .2rem;
-    vertical-align: -.4em;
+    vertical-align: -.3em;
+    margin-right: .1em;
   }
-  .platform-cta a {
-    color: var(--bg);
+  .platform-quote blockquote::after {
+    content: "”";
+    color: var(--burgundy);
+    font-size: 1.4em;
+    line-height: 0;
+    vertical-align: -.3em;
+    margin-left: .1em;
+  }
+  .platform-quote a {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--burgundy);
     text-decoration: none;
-    border-bottom: 1px solid var(--red);
-    padding-bottom: 4px;
     font-size: .78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 600;
-    justify-self: end;
+    border-bottom: 1px solid var(--burgundy);
+    padding-bottom: 4px;
     transition: color .2s ease;
   }
-  .platform-cta a:hover { color: var(--red); }
+  .platform-quote a:hover { color: var(--burgundy-deep); }
+
+  /* === APPEARANCES SLIDESHOW === */
+  .slideshow-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+  .slideshow-head p { color: var(--ink-mid); font-size: 1.1rem; max-width: 28rem; }
+
+  .slideshow {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--bg);
+    border: 1px solid var(--rule-mid);
+  }
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3.5rem;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .slide.active { opacity: 1; }
+
+  /* Slide WITH image */
+  .slide.has-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--slide-img);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+  .slide.has-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(14,14,14,0.92) 0%, rgba(14,14,14,0.45) 55%, rgba(14,14,14,0.05) 100%);
+    z-index: 1;
+  }
+  .slide.has-image > * { position: relative; z-index: 2; color: var(--bg); }
+  .slide.has-image .slide-meta { color: var(--bg); opacity: .85; }
+  .slide.has-image .slide-num { color: var(--bg); opacity: .65; }
+  .slide.has-image .slide-mark { color: var(--burgundy-light); opacity: .55; }
+
+  .slide-num {
+    position: absolute;
+    top: 2.5rem; left: 3.5rem;
+    font-size: .68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    z-index: 2;
+    color: var(--ink-soft);
+  }
+  .slide-mark {
+    position: absolute;
+    top: 2rem; right: 3rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--burgundy);
+    opacity: .35;
+    z-index: 2;
+  }
+  .slide-meta {
+    font-size: .68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--burgundy);
+  }
+  .slide h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    max-width: 36rem;
+  }
+  .slide h3 em { font-style: italic; }
+  .slide p {
+    font-size: 1rem;
+    max-width: 38rem;
+    line-height: 1.55;
+    color: var(--ink-mid);
+  }
+
+  /* Slideshow controls */
+  .slide-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  .slide-dots { display: flex; gap: .5rem; }
+  .dot {
+    width: 28px; height: 2px;
+    background: var(--rule-mid);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background .25s ease;
+  }
+  .dot.active { background: var(--burgundy); }
+  .slide-arrows { display: flex; gap: .5rem; }
+  .arrow-btn {
+    width: 44px; height: 44px;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg);
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all .2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrow-btn:hover { background: var(--burgundy); color: var(--bg); border-color: var(--burgundy); }
 
   /* === REQUEST === */
-  .request { background: var(--bg-alt); }
-  .request-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 5rem;
+  .request-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem;
   }
   .request-intro p {
     color: var(--ink-mid);
-    margin-bottom: 1.2rem;
-    font-size: 1.02rem;
-    line-height: 1.7;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.65;
   }
-  .event-list {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule-strong);
+
+  /* Priority callout — white with burgundy frame */
+  .priority-banner {
+    background: var(--bg);
+    color: var(--ink);
+    padding: 2rem 2.5rem;
+    margin-bottom: 3.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    border: 1px solid var(--burgundy-rule);
+    border-left: 3px solid var(--burgundy);
   }
-  .event-list h4 {
-    font-size: .68rem;
-    text-transform: uppercase;
+  .priority-banner .badge {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--burgundy);
+  }
+  .priority-banner .badge::before {
+    content: "✦";
+    margin-right: .5rem;
+    font-style: normal;
+    color: var(--burgundy);
+  }
+  .priority-banner p {
+    font-size: .98rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .priority-banner strong { color: var(--burgundy); font-weight: 600; }
+  .priority-banner small {
+    font-size: .7rem;
     letter-spacing: 0.22em;
-    color: var(--ink-soft);
-    margin-bottom: 1.2rem;
+    text-transform: uppercase;
     font-weight: 600;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  /* Tiered event lists — clean editorial typography */
+  .tier { margin-bottom: 3rem; }
+  .tier-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--rule-mid);
+  }
+  .tier-label {
+    font-size: .68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--burgundy);
+  }
+  .tier-label.secondary { color: var(--ink-soft); }
+  .tier-desc {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-mid);
+    font-weight: 400;
   }
   .event-tags {
-    display: flex; flex-wrap: wrap; gap: .4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7rem 2rem;
+    margin-top: .5rem;
+    align-items: baseline;
   }
   .tag {
-    padding: .45rem 1rem;
-    background: var(--bg);
-    border: 1px solid var(--rule-strong);
-    font-size: .78rem;
-    color: var(--ink);
-    transition: all .2s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: default;
+    transition: font-weight .15s ease, letter-spacing .15s ease;
+    line-height: 1.4;
+    display: inline-block;
   }
-  .tag:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  /* Bold-on-hover for both tiers */
+  .tier-priority .tag {
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: var(--burgundy);
+    letter-spacing: -0.005em;
+  }
+  .tier-priority .tag:hover {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .tier-secondary .tag {
+    font-size: .94rem;
+    font-weight: 400;
+    color: var(--ink-mid);
+  }
+  .tier-secondary .tag:hover {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* Form */
+  .form-wrap {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+  }
+  .form-side h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .form-side p { color: var(--ink-mid); font-size: .98rem; line-height: 1.65; margin-bottom: 1rem; }
+  .form-side .direct-email {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: .88rem;
+    color: var(--ink-mid);
+  }
+  .form-side .direct-email a {
+    color: var(--burgundy);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--burgundy);
+  }
 
   form {
     background: var(--bg);
-    padding: 3rem;
-    border: 1px solid var(--rule-strong);
+    padding: 2.5rem;
+    border: 1px solid var(--rule-mid);
   }
   .field { margin-bottom: 1.5rem; }
   .field label {
@@ -458,7 +711,7 @@
     margin-bottom: .55rem;
     font-weight: 600;
   }
-  .field label .req { color: var(--red); }
+  .field label .req { color: var(--burgundy); }
   .field input,
   .field select,
   .field textarea {
@@ -470,17 +723,42 @@
     background: var(--bg);
     color: var(--ink);
     transition: border-color .2s ease;
+    border-radius: 0;
   }
   .field input:focus,
   .field select:focus,
   .field textarea:focus {
     outline: none;
-    border-color: var(--red);
+    border-color: var(--burgundy);
   }
   .field textarea { resize: vertical; min-height: 110px; }
   .field-row {
     display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
   }
+
+  /* STEM priority checkbox */
+  .priority-check {
+    background: var(--bg);
+    border: 1px solid var(--burgundy);
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: .8rem;
+  }
+  .priority-check input { width: auto; margin-top: .25rem; accent-color: var(--burgundy); }
+  .priority-check label {
+    font-size: .88rem;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .priority-check label strong { color: var(--burgundy); }
+
   .form-note {
     font-size: .82rem;
     color: var(--ink-soft);
@@ -490,17 +768,218 @@
   .form-success {
     display: none;
     padding: 1.5rem;
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--bg);
+    color: var(--burgundy);
     text-align: center;
     margin-top: 1.2rem;
+    border: 1px solid var(--burgundy);
   }
   .form-success.show { display: block; }
   .form-success p {
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  /* === SPONSOR — white, with big serif stat moment === */
+  .sponsor .section-inner { position: relative; }
+  .sponsor h2 { color: var(--ink); }
+  .sponsor h2 em { color: var(--burgundy); }
+
+  .sponsor-rule-top {
+    width: 100%;
+    height: 1px;
+    background: var(--rule-mid);
+    margin: 3rem 0 4rem;
+  }
+
+  .sponsor-stat-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--rule-mid);
+  }
+  .stat-display {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(5rem, 14vw, 11rem);
     font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--ink);
+  }
+  .stat-display em {
+    font-style: italic;
+    color: var(--burgundy);
+  }
+  .stat-display .plus {
+    color: var(--burgundy);
+    font-weight: 400;
+  }
+  .stat-label {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--ink-soft);
+    margin-top: 1.5rem;
+    font-weight: 600;
+  }
+  .sponsor-text p {
+    color: var(--ink-mid);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .sponsor-text p strong { color: var(--ink); font-weight: 600; }
+
+  /* Benefits */
+  .sponsor-benefits {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--rule-mid);
+  }
+  .sponsor-benefits h4 {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--burgundy);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+  .sponsor-benefits ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 4rem;
+  }
+  .sponsor-benefits li {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  .sponsor-benefits li::before {
+    content: "✦";
+    color: var(--burgundy);
+    font-size: 1rem;
+  }
+  .sponsor-benefits li strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: .4rem;
+    color: var(--ink);
+  }
+  .sponsor-benefits li span {
+    color: var(--ink-mid);
+    font-size: .96rem;
+    line-height: 1.6;
+  }
+
+  /* How to sponsor — two cards */
+  .sponsor-how {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule-mid);
+  }
+  .sponsor-option {
+    background: var(--bg);
+    padding: 3rem;
+  }
+  .sponsor-option:first-child {
+    border-right: 1px solid var(--rule-mid);
+  }
+  .sponsor-option h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .sponsor-option h4 em { font-style: italic; color: var(--burgundy); }
+  .sponsor-option p {
+    color: var(--ink-mid);
+    font-size: .98rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+  .sponsor-option .address {
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    padding: 1rem 0 1rem 1.2rem;
+    border-left: 2px solid var(--burgundy);
+  }
+  .sponsor-option .memo {
+    font-size: .82rem;
+    color: var(--burgundy);
+    margin-top: .8rem;
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+  }
+  .sponsor-option .btn {
+    margin-top: 1rem;
+  }
+
+  .sponsor-letter-toggle {
+    margin-top: 3.5rem;
+    text-align: center;
+  }
+  .sponsor-letter-toggle button {
+    background: transparent;
+    border: 1px solid var(--burgundy);
+    color: var(--burgundy);
+    font-family: 'Inter', sans-serif;
+    font-size: .76rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: .9rem 2rem;
+    cursor: pointer;
+    transition: all .2s ease;
+  }
+  .sponsor-letter-toggle button:hover {
+    background: var(--burgundy);
+    color: var(--bg);
+  }
+  .sponsor-letter {
+    display: none;
+    margin-top: 2.5rem;
+    padding: 3rem;
+    background: var(--bg);
+    border: 1px solid var(--rule-mid);
+    border-left: 3px solid var(--burgundy);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sponsor-letter.show { display: block; }
+  .sponsor-letter p {
+    color: var(--ink);
+    font-size: .98rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .sponsor-letter p strong { color: var(--burgundy); }
+  .sponsor-letter a {
+    color: var(--burgundy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--burgundy);
+  }
+  .sponsor-letter .signoff {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 2rem;
+    font-size: .9rem;
   }
 
   /* === CONNECT === */
@@ -515,10 +994,9 @@
   .connect-tag { color: var(--ink-mid); font-size: 1.1rem; max-width: 24rem; }
   .socials {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--rule-strong);
-    border: 1px solid var(--rule-strong);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule-mid);
   }
   .social {
     padding: 3rem 2.5rem;
@@ -529,42 +1007,61 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 200px;
+    min-height: 220px;
+    border-right: 1px solid var(--rule-mid);
+    position: relative;
   }
-  .social:hover { background: var(--ink); color: var(--bg); }
-  .social:hover .social-label { color: var(--red); }
+  .social:last-child { border-right: none; }
+  .social::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--burgundy);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .social:hover::before { transform: scaleX(1); }
+  .social:hover .social-handle { color: var(--burgundy); }
+  .social:hover .social-arrow { color: var(--burgundy); }
   .social-label {
     font-size: .68rem;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    color: var(--ink-soft);
+    color: var(--burgundy);
     font-weight: 600;
     margin-bottom: 2rem;
-    transition: color .25s ease;
   }
   .social-handle {
     font-family: 'Fraunces', serif;
-    font-size: 2rem;
+    font-size: 1.65rem;
     font-weight: 300;
     letter-spacing: -0.02em;
     line-height: 1.1;
+    word-break: break-word;
+    color: var(--ink);
+    transition: color .25s ease;
   }
   .social-arrow {
     margin-top: 1.5rem;
-    font-size: .78rem;
+    font-size: .76rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-weight: 600;
+    color: var(--ink-mid);
     display: flex;
     align-items: center;
     gap: .5rem;
+    transition: color .25s ease;
   }
 
-  /* === FOOTER === */
+  /* === FOOTER — white with top rule === */
   footer {
     padding: 4rem 2.5rem 2.5rem;
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--bg);
+    color: var(--ink);
+    border-top: 1px solid var(--rule-mid);
   }
   .footer-inner {
     max-width: 1200px; margin: 0 auto;
@@ -572,8 +1069,6 @@
     grid-template-columns: 1fr auto;
     gap: 2rem;
     align-items: end;
-    border-top: 1px solid rgba(250,250,248,.15);
-    padding-top: 3rem;
   }
   .footer-mark {
     font-family: 'Fraunces', serif;
@@ -581,24 +1076,144 @@
     font-weight: 300;
     letter-spacing: -0.02em;
     line-height: 1;
+    color: var(--ink);
   }
-  .footer-mark em { font-style: italic; color: var(--red); }
+  .footer-mark em { font-style: italic; color: var(--burgundy); }
   .footer-mark + p {
     font-size: .72rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(250,250,248,.5);
+    color: var(--ink-soft);
     margin-top: .8rem;
     font-weight: 500;
   }
+  .footer-mark + p a {
+    color: var(--burgundy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--burgundy-rule);
+    padding-bottom: 1px;
+    transition: border-color .2s ease;
+  }
+  .footer-mark + p a:hover { border-color: var(--burgundy); }
   .footer-meta {
     text-align: right;
     font-size: .72rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(250,250,248,.5);
+    color: var(--ink-soft);
     font-weight: 500;
   }
+
+  /* === BURGUNDY SECTIONS (alternating treatment) === */
+  section.section-dark {
+    background: var(--burgundy);
+    color: var(--bg);
+  }
+  section.section-dark h2 { color: var(--bg); }
+  section.section-dark h2 em { color: #ffffff; font-style: italic; }
+  section.section-dark .section-eyebrow { color: rgba(248, 248, 246, 0.65); }
+
+  /* About text */
+  section.section-dark .about-text p { color: rgba(248, 248, 246, 0.85); }
+  section.section-dark .about-text p strong { color: var(--bg); }
+  section.section-dark .credentials { border-top-color: rgba(248, 248, 246, 0.28); }
+  section.section-dark .credentials li { border-bottom-color: rgba(248, 248, 246, 0.14); }
+  section.section-dark .credentials li span { color: rgba(248, 248, 246, 0.55); }
+  section.section-dark .credentials li strong { color: var(--bg); }
+
+  /* Slideshow */
+  section.section-dark .slideshow-head p { color: rgba(248, 248, 246, 0.82); }
+  section.section-dark .slideshow {
+    background: transparent;
+    border-color: rgba(248, 248, 246, 0.28);
+  }
+  section.section-dark .slide {
+    background: transparent;
+    color: var(--bg);
+  }
+  section.section-dark .slide-num { color: rgba(248, 248, 246, 0.55); }
+  section.section-dark .slide-mark { color: rgba(248, 248, 246, 0.25); }
+  section.section-dark .slide-meta { color: rgba(248, 248, 246, 0.78); }
+  section.section-dark .slide h3 { color: var(--bg); }
+  section.section-dark .slide p { color: rgba(248, 248, 246, 0.82); }
+  /* has-image dark gradient stays — needed for legibility over photos */
+
+  section.section-dark .dot { background: rgba(248, 248, 246, 0.28); }
+  section.section-dark .dot.active { background: var(--bg); }
+  section.section-dark .arrow-btn {
+    border-color: rgba(248, 248, 246, 0.4);
+    background: transparent;
+    color: var(--bg);
+  }
+  section.section-dark .arrow-btn:hover {
+    background: var(--bg);
+    color: var(--burgundy);
+    border-color: var(--bg);
+  }
+
+  /* Sponsor */
+  section.section-dark .sponsor-rule-top { background: rgba(248, 248, 246, 0.28); }
+  section.section-dark .sponsor-stat-block { border-bottom-color: rgba(248, 248, 246, 0.28); }
+  section.section-dark .stat-display { color: var(--bg); }
+  section.section-dark .stat-display em { color: #ffffff; }
+  section.section-dark .stat-display .plus { color: rgba(248, 248, 246, 0.7); }
+  section.section-dark .stat-label { color: rgba(248, 248, 246, 0.6); }
+  section.section-dark .sponsor-text p { color: rgba(248, 248, 246, 0.85); }
+  section.section-dark .sponsor-text p strong { color: var(--bg); }
+
+  section.section-dark .sponsor-benefits { border-bottom-color: rgba(248, 248, 246, 0.28); }
+  section.section-dark .sponsor-benefits h4 { color: rgba(248, 248, 246, 0.7); }
+  section.section-dark .sponsor-benefits li::before { color: var(--bg); }
+  section.section-dark .sponsor-benefits li strong { color: var(--bg); }
+  section.section-dark .sponsor-benefits li span { color: rgba(248, 248, 246, 0.82); }
+
+  section.section-dark .sponsor-how { border-color: rgba(248, 248, 246, 0.28); }
+  section.section-dark .sponsor-option { background: transparent; }
+  section.section-dark .sponsor-option:first-child { border-right-color: rgba(248, 248, 246, 0.28); }
+  section.section-dark .sponsor-option h4 { color: var(--bg); }
+  section.section-dark .sponsor-option h4 em { color: #ffffff; }
+  section.section-dark .sponsor-option p { color: rgba(248, 248, 246, 0.85); }
+  section.section-dark .sponsor-option p strong { color: var(--bg); }
+  section.section-dark .sponsor-option .address {
+    color: var(--bg);
+    border-left-color: var(--bg);
+  }
+  section.section-dark .sponsor-option .memo { color: rgba(248, 248, 246, 0.75); }
+
+  /* Primary button on burgundy — invert to white */
+  section.section-dark .btn-primary {
+    background: var(--bg);
+    color: var(--burgundy);
+  }
+  section.section-dark .btn-primary:hover {
+    background: rgba(248, 248, 246, 0.88);
+    color: var(--burgundy-deep);
+  }
+
+  /* Sponsor letter toggle button */
+  section.section-dark .sponsor-letter-toggle button {
+    border-color: rgba(248, 248, 246, 0.45);
+    color: var(--bg);
+  }
+  section.section-dark .sponsor-letter-toggle button:hover {
+    background: var(--bg);
+    color: var(--burgundy);
+  }
+
+  /* Expanded letter — flips to white "paper" inside burgundy */
+  section.section-dark .sponsor-letter {
+    background: var(--bg);
+    color: var(--ink);
+    border-color: var(--rule-mid);
+    border-left-color: var(--burgundy);
+  }
+  section.section-dark .sponsor-letter p { color: var(--ink); }
+  section.section-dark .sponsor-letter p strong { color: var(--burgundy); }
+  section.section-dark .sponsor-letter a {
+    color: var(--burgundy);
+    border-bottom-color: var(--burgundy);
+  }
+  section.section-dark .sponsor-letter .signoff { color: var(--ink-soft); }
 
   /* === RESPONSIVE === */
   @media (max-width: 900px) {
@@ -606,12 +1221,14 @@
     .hero, section { padding-left: 1.5rem; padding-right: 1.5rem; }
     .hero { padding-top: 3rem; padding-bottom: 4rem; }
     section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
-    .hero-grid, .about-grid, .request-grid, .connect-head, .platform-cta {
+    .hero-grid, .about-grid, .slideshow-head, .form-wrap, .connect-head, .sponsor-stat-block {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
-    .platform-cards, .socials { grid-template-columns: 1fr; }
-    .platform-cta a { justify-self: start; }
+    .platform-cards, .socials, .sponsor-how, .sponsor-benefits ul { grid-template-columns: 1fr; }
+    .sponsor-option:first-child { border-right: none; border-bottom: 1px solid var(--rule-mid); }
+    .social { border-right: none; border-bottom: 1px solid var(--rule-mid); }
+    .social:last-child { border-bottom: none; }
     .field-row { grid-template-columns: 1fr; }
     .hero-meta { flex-direction: column; gap: 1.2rem; }
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -630,6 +1247,18 @@
     }
     form { padding: 2rem 1.5rem; }
     .marquee-track { font-size: 1.1rem; }
+    .slideshow { aspect-ratio: 4/5; }
+    .slide { padding: 2.5rem 1.8rem; }
+    .slide-num { top: 1.5rem; left: 1.8rem; }
+    .slide-mark { top: 1.2rem; right: 1.5rem; font-size: 2.5rem; }
+    .priority-banner {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .priority-banner small { white-space: normal; }
+    .sponsor-benefits { padding: 3rem 0; }
+    .sponsor-option { padding: 2rem 1.5rem; }
+    .sponsor-letter { padding: 2rem 1.5rem; }
   }
 
   /* === ANIMATIONS === */
@@ -652,7 +1281,9 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#platform">Platform</a></li>
-        <li><a href="#request">Request</a></li>
+        <li><a href="#appearances">Appearances</a></li>
+        <li><a href="#request">Book Me</a></li>
+        <li><a href="#sponsor">Sponsor</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
     </nav>
@@ -668,7 +1299,7 @@
       <div class="reveal">
         <div class="eyebrow"><span class="line"></span> Miss Massachusetts Teen Coed · 2026</div>
         <h1 class="title">Alexis<br/><em>Frye.</em></h1>
-        <p class="hero-tag">Engineer-in-training. Founder of Grow with STEM. Reigning Miss Massachusetts Teen Coed — and on the road to nationals.</p>
+        <p class="hero-tag">Engineer-in-training. Founder of Grow With STEM. Reigning Miss Massachusetts Teen Coed — championing STEM education and learning-difference advocacy across the Commonwealth.</p>
 
         <div class="hero-meta">
           <div class="meta-item">
@@ -678,13 +1309,13 @@
             Studying<strong>Engineering</strong>
           </div>
           <div class="meta-item">
-            Platform<strong>Grow with STEM</strong>
+            Platform<strong>Grow With STEM</strong>
           </div>
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#request">Request an Appearance <span class="arrow">→</span></a>
-          <a class="btn btn-ghost" href="#platform">My Platform</a>
+          <a class="btn btn-primary" href="#request">Book an Appearance <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#sponsor">Become a Sponsor</a>
         </div>
       </div>
 
@@ -703,13 +1334,13 @@
   <!-- MARQUEE -->
   <div class="marquee">
     <div class="marquee-track">
-      <span>Engineering <span class="star">✦</span> Pageantry <span class="star">✦</span> STEM Outreach <span class="star">✦</span> School Visits <span class="star">✦</span> Public Speaking <span class="star">✦</span> Advocacy <span class="star">✦</span></span>
-      <span>Engineering <span class="star">✦</span> Pageantry <span class="star">✦</span> STEM Outreach <span class="star">✦</span> School Visits <span class="star">✦</span> Public Speaking <span class="star">✦</span> Advocacy <span class="star">✦</span></span>
+      <span>STEM Education <span class="star">✦</span> Engineering <span class="star">✦</span> Learning Differences <span class="star">✦</span> School Visits <span class="star">✦</span> Public Speaking <span class="star">✦</span> Pageantry <span class="star">✦</span> Advocacy <span class="star">✦</span></span>
+      <span>STEM Education <span class="star">✦</span> Engineering <span class="star">✦</span> Learning Differences <span class="star">✦</span> School Visits <span class="star">✦</span> Public Speaking <span class="star">✦</span> Pageantry <span class="star">✦</span> Advocacy <span class="star">✦</span></span>
     </div>
   </div>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section id="about" class="section-dark">
     <div class="section-inner">
       <div class="about-grid">
         <div class="reveal">
@@ -719,12 +1350,12 @@
         <div class="about-text reveal delay-1">
           <p>Alexis Frye is a 19-year-old engineering student, community organizer, and the reigning Miss Massachusetts Teen Coed. Her journey to the crown has been shaped by curiosity, persistence, and a lifelong love of figuring out how things work — even when the numbers refused to cooperate.</p>
           <p>Diagnosed with <strong>numeric dyslexia</strong>, Alexis spent years convinced she could never pursue a STEM career. Today, she's proving the opposite — and using her title to make sure other students know that a learning difference is never the end of the story.</p>
-          <p>Beyond pageantry, she founded <strong>Grow with STEM</strong>, a community organization that brings hands-on science, technology, engineering, and math experiences to classrooms, libraries, and scout troops across Massachusetts.</p>
+          <p>Beyond pageantry, she founded <strong>Grow With STEM</strong>, a community organization that brings hands-on science, technology, engineering, and math experiences to classrooms, libraries, and scout troops across Massachusetts.</p>
 
           <ul class="credentials">
             <li><span>Title</span><strong>Miss Massachusetts Teen Coed 2026</strong></li>
             <li><span>Studying</span><strong>Engineering</strong></li>
-            <li><span>Founder</span><strong>Grow with STEM</strong></li>
+            <li><span>Founder</span><strong>Grow With STEM</strong></li>
             <li><span>Cause</span><strong>Learning Differences & STEM Access</strong></li>
             <li><span>Next</span><strong>Competing at Nationals</strong></li>
           </ul>
@@ -738,8 +1369,8 @@
     <div class="section-inner">
       <div class="platform-hero reveal">
         <div class="section-eyebrow">— 02 / Platform</div>
-        <h2>Grow with <em>STEM.</em></h2>
-        <p>A reign isn't required to have a cause — but mine has one. Through Grow with STEM, I share my story of overcoming numeric dyslexia and invite young people to discover that engineering, science, and curiosity are within their reach.</p>
+        <h2>Grow With <em>STEM.</em></h2>
+        <p>A reign isn't required to have a cause — but mine has one. Through Grow With STEM, I share my story of overcoming numeric dyslexia and invite young people to discover that engineering, science, and curiosity are within their reach.</p>
       </div>
 
       <div class="platform-cards">
@@ -760,9 +1391,36 @@
         </div>
       </div>
 
-      <div class="platform-cta reveal">
+      <div class="platform-quote reveal">
         <blockquote>Your brain doesn't have to work the way the textbook expects. It just has to work.</blockquote>
-        <a href="https://www.instagram.com/growwith_stem/" target="_blank" rel="noopener">@growwith_stem →</a>
+        <a href="https://www.instagram.com/growwith_stem/" target="_blank" rel="noopener">Follow @growwith_stem →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPEARANCES SLIDESHOW -->
+  <section id="appearances" class="section-dark">
+    <div class="section-inner">
+      <div class="slideshow-head">
+        <div class="reveal">
+          <div class="section-eyebrow">— 03 / Past Appearances</div>
+          <h2>The <em>Highlights</em>.</h2>
+        </div>
+        <p class="reveal delay-1">A look at the moments, classrooms, and stages along the way — with plenty more to come this year.</p>
+      </div>
+
+      <div class="slideshow reveal delay-2"
+           onmouseenter="pauseSlides()" onmouseleave="resumeSlides()"
+           id="slideshow">
+        <!-- Slides injected by JS -->
+      </div>
+
+      <div class="slide-controls">
+        <div class="slide-dots" id="slideDots"></div>
+        <div class="slide-arrows">
+          <button class="arrow-btn" onclick="prevSlide()" aria-label="Previous slide">←</button>
+          <button class="arrow-btn" onclick="nextSlide()" aria-label="Next slide">→</button>
+        </div>
       </div>
     </div>
   </section>
@@ -770,47 +1428,81 @@
   <!-- REQUEST -->
   <section class="request" id="request">
     <div class="section-inner">
-      <div class="request-grid">
-        <div class="request-intro reveal">
-          <div class="section-eyebrow">— 03 / Appearances</div>
-          <h2>Request Miss MA <em>Teen Coed</em>.</h2>
-          <p>I'd be honored to be part of your event, school visit, ribbon cutting, or community gathering. Share the details and I'll respond within 3–5 days.</p>
-          <p>For Grow with STEM visits — schools, classrooms, libraries, and scout troops — please mention that in the form so I can prepare age-appropriate materials.</p>
+      <div class="request-intro reveal">
+        <div class="section-eyebrow">— 04 / Book Me</div>
+        <h2>Request an <em>Appearance</em>.</h2>
+      </div>
 
-          <div class="event-list">
-            <h4>Available For</h4>
-            <div class="event-tags">
-              <span class="tag">Parades</span>
-              <span class="tag">Business Openings</span>
-              <span class="tag">Ribbon Cuttings</span>
-              <span class="tag">Festivals & Fairs</span>
-              <span class="tag">School Visits</span>
-              <span class="tag">Classroom Talks</span>
-              <span class="tag">Career Days</span>
-              <span class="tag">Library Programs</span>
-              <span class="tag">Scout Troops</span>
-              <span class="tag">Girl Scout Badge Days</span>
-              <span class="tag">STEM Workshops</span>
-              <span class="tag">Fundraisers</span>
-              <span class="tag">Charity Events</span>
-              <span class="tag">Galas & Banquets</span>
-              <span class="tag">Speaking Engagements</span>
-              <span class="tag">Panel Appearances</span>
-              <span class="tag">Press & Media</span>
-              <span class="tag">Photo Ops</span>
-              <span class="tag">Holiday Events</span>
-              <span class="tag">Sporting Events</span>
-              <span class="tag">Community Meetings</span>
-              <span class="tag">Volunteer Days</span>
-              <span class="tag">Birthday Visits</span>
-              <span class="tag">Hospital Visits</span>
-              <span class="tag">Senior Center Visits</span>
-              <span class="tag">Other</span>
-            </div>
+      <div class="priority-banner reveal">
+        <div class="badge">Priority Booking</div>
+        <p><strong>STEM, education, and learning-difference events receive a response within 48 hours.</strong> Schools, libraries, scout troops, and educational organizations move to the front of the line.</p>
+        <small>— 48 hr response —</small>
+      </div>
+
+      <div class="tier tier-priority reveal delay-1">
+        <div class="tier-header">
+          <div class="tier-label">Priority Bookings</div>
+          <div class="tier-desc">— aligned with my platform</div>
+        </div>
+        <div class="event-tags">
+          <span class="tag">School Visits</span>
+          <span class="tag">Classroom Talks</span>
+          <span class="tag">STEM Workshops</span>
+          <span class="tag">Career Days</span>
+          <span class="tag">Library Programs</span>
+          <span class="tag">Scout Troops</span>
+          <span class="tag">Girl Scout Badge Days</span>
+          <span class="tag">Education Panels</span>
+          <span class="tag">Learning-Difference Advocacy</span>
+          <span class="tag">Youth Mentorship</span>
+          <span class="tag">Engineering Outreach</span>
+          <span class="tag">STEM Fairs</span>
+        </div>
+      </div>
+
+      <div class="tier tier-secondary reveal delay-2">
+        <div class="tier-header">
+          <div class="tier-label secondary">Also Available</div>
+          <div class="tier-desc">— community events I'd love to be part of</div>
+        </div>
+        <div class="event-tags">
+          <span class="tag">Parades</span>
+          <span class="tag">National Anthem Performances</span>
+          <span class="tag">Ribbon Cuttings</span>
+          <span class="tag">Business Openings</span>
+          <span class="tag">Festivals & Fairs</span>
+          <span class="tag">Fundraisers</span>
+          <span class="tag">Charity Events</span>
+          <span class="tag">Galas & Banquets</span>
+          <span class="tag">Marathons & 5Ks</span>
+          <span class="tag">Speaking Engagements</span>
+          <span class="tag">Press & Media</span>
+          <span class="tag">Photo Ops</span>
+          <span class="tag">Holiday Events</span>
+          <span class="tag">Sporting Events</span>
+          <span class="tag">Community Meetings</span>
+          <span class="tag">Hospital Visits</span>
+          <span class="tag">Senior Center Visits</span>
+          <span class="tag">Other</span>
+        </div>
+      </div>
+
+      <div class="form-wrap">
+        <div class="form-side reveal">
+          <h3>Tell me about your event.</h3>
+          <p>The more detail you share, the better I can prepare — especially audience size, age range, and what you'd like me to speak about or do.</p>
+          <p>STEM, education, and learning-difference events get a response within 48 hours. All other requests within 3–5 days.</p>
+          <div class="direct-email">
+            Prefer to email directly? Reach me at <a href="mailto:alexishfrye@gmail.com">alexishfrye@gmail.com</a>
           </div>
         </div>
 
         <form id="appearanceForm" onsubmit="handleSubmit(event)">
+          <div class="priority-check">
+            <input type="checkbox" id="isPriority" name="isPriority" value="Yes — Priority STEM/Education Event" />
+            <label for="isPriority"><strong>Yes — this is a STEM, education, or learning-difference event.</strong> (Priority response within 48 hours.)</label>
+          </div>
+
           <div class="field">
             <label>Your Name <span class="req">*</span></label>
             <input type="text" name="name" required />
@@ -826,36 +1518,43 @@
             </div>
           </div>
           <div class="field">
-            <label>Organization / Affiliation</label>
+            <label>Organization / School / Affiliation</label>
             <input type="text" name="org" />
           </div>
           <div class="field">
             <label>Event Type <span class="req">*</span></label>
             <select name="eventType" id="eventType" required onchange="toggleOther()">
               <option value="">Select one…</option>
-              <option>Parade</option>
-              <option>Business Opening / Ribbon Cutting</option>
-              <option>Festival or Fair</option>
-              <option>School Visit / Classroom Talk</option>
-              <option>Career Day</option>
-              <option>Library Program</option>
-              <option>Scout Troop Visit</option>
-              <option>Girl Scout Badge Day</option>
-              <option>STEM Workshop</option>
-              <option>Speaking Engagement</option>
-              <option>Panel Appearance</option>
-              <option>Charity / Fundraiser</option>
-              <option>Gala or Banquet</option>
-              <option>Press / Media Interview</option>
-              <option>Photo Op</option>
-              <option>Holiday Event</option>
-              <option>Sporting Event</option>
-              <option>Community Meeting</option>
-              <option>Volunteer Day</option>
-              <option>Birthday Visit</option>
-              <option>Hospital Visit</option>
-              <option>Senior Center Visit</option>
-              <option>Other</option>
+              <optgroup label="— Priority Bookings —">
+                <option>School Visit / Classroom Talk</option>
+                <option>STEM Workshop</option>
+                <option>Career Day</option>
+                <option>Library Program</option>
+                <option>Scout Troop Visit</option>
+                <option>Girl Scout Badge Day</option>
+                <option>Education Panel</option>
+                <option>Learning-Difference Advocacy Event</option>
+                <option>Youth Mentorship</option>
+                <option>STEM Fair</option>
+              </optgroup>
+              <optgroup label="— Also Available —">
+                <option>Parade</option>
+                <option>National Anthem Performance</option>
+                <option>Ribbon Cutting / Business Opening</option>
+                <option>Festival or Fair</option>
+                <option>Fundraiser / Charity Event</option>
+                <option>Gala or Banquet</option>
+                <option>Marathon / 5K</option>
+                <option>Speaking Engagement</option>
+                <option>Press / Media Interview</option>
+                <option>Photo Op</option>
+                <option>Holiday Event</option>
+                <option>Sporting Event</option>
+                <option>Community Meeting</option>
+                <option>Hospital Visit</option>
+                <option>Senior Center Visit</option>
+                <option>Other</option>
+              </optgroup>
             </select>
           </div>
           <div class="field" id="otherField" style="display: none;">
@@ -881,11 +1580,99 @@
             <textarea name="details" required placeholder="Audience size, age range, expected duration, what you'd like me to do or speak about, and anything else I should know."></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" id="submitBtn">Submit Request <span class="arrow">→</span></button>
-          <p class="form-note">I review every request personally and respond within 3–5 days.</p>
+          <p class="form-note">Every request is reviewed personally. Priority events: 48-hour response · All others: 3–5 days.</p>
           <div class="form-success" id="formSuccess">
-            <p>Thank you — your request has been received. I'll be in touch within 3–5 days.</p>
+            <p>Thank you — your request has been received. I'll be in touch soon.</p>
           </div>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSOR -->
+  <section class="sponsor section-dark" id="sponsor">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-eyebrow">— 05 / Sponsor</div>
+        <h2>Sponsor my road to <em>Nationals.</em></h2>
+      </div>
+
+      <div class="sponsor-rule-top"></div>
+
+      <div class="sponsor-stat-block reveal delay-1">
+        <div>
+          <div class="stat-display">$60,000<span class="plus">+</span></div>
+          <div class="stat-label">— in cash scholarships & prize packages at the National Finals</div>
+        </div>
+        <div class="sponsor-text">
+          <p>I've earned my place in the <strong>National Miss American Coed Pageant</strong>, where I'll compete alongside women from across the country for scholarships, prize packages, and a national title.</p>
+          <p>Sponsors help cover entry fees and unlock additional prizes through the National Advertising Program — and their contributions are <strong>tax-deductible as an advertising expense</strong> for your business.</p>
+        </div>
+      </div>
+
+      <div class="sponsor-benefits reveal delay-2">
+        <h4>— Why Sponsor</h4>
+        <ul>
+          <li>
+            <div>
+              <strong>Tax-Deductible</strong>
+              <span>Contributions qualify as a tax-deductible advertising expense for your business.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>National Program Book</strong>
+              <span>All sponsors are featured in the National Program Book distributed to hundreds of contestants and published across the pageant's social media.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Support a Future Leader</strong>
+              <span>You help a young woman build poise, self-confidence, and the communication skills she'll carry into her engineering career.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Direct Community Impact</strong>
+              <span>Your name behind a title holder championing STEM education and learning-difference advocacy across Massachusetts.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sponsor-how reveal">
+        <div class="sponsor-option">
+          <h4>Mail a <em>Check</em></h4>
+          <p>Make checks payable to <strong>Landry Productions LLC</strong> and include my name in the memo line.</p>
+          <div class="address">
+            Landry Productions LLC<br/>
+            PO Box 1151<br/>
+            Billerica, MA 01821
+          </div>
+          <p class="memo">Memo line: "Alexis Frye"</p>
+        </div>
+        <div class="sponsor-option">
+          <h4>Email <em>Invoice</em></h4>
+          <p>For invoiced sponsorships and to learn about advertising-program tiers, reach out and I'll send the details.</p>
+          <a class="btn btn-primary" href="mailto:alexishfrye@gmail.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20Alexis%20Frye%20%2F%20MA%20Teen%20Coed&body=Hi%20Alexis%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20sponsoring%20your%20road%20to%20Nationals.%0A%0AName%2FBusiness%3A%20%0AContribution%20level%20%28if%20known%29%3A%20%0AQuestions%3A%20%0A%0AThanks%21">Contact for Invoice <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="sponsor-letter-toggle">
+        <button onclick="toggleLetter()" id="letterBtn">Read the Full Sponsor Letter</button>
+      </div>
+
+      <div class="sponsor-letter" id="sponsorLetter">
+        <p><strong>Dear Prospective Sponsor,</strong></p>
+        <p>This letter is to introduce you to a contestant in the National Miss American Coed Pageant. This contestant's outstanding achievements have qualified her to move on to our National Finals to compete alongside women from across the country for cash scholarships and prize packages valued at over $60,000!</p>
+        <p>As a prospective sponsor, you are asked to participate by offering financial support. Sponsors can help contribute to contestants' entry fees or earn additional prizes by supporting their participation in the National Advertising Program.</p>
+        <p>Not only do your contributions help a future leader take part in an experience that will help her gain poise, self-confidence and valuable communication skills, they are also <strong>tax deductible as an advertising expense for your business!</strong> All sponsors have the opportunity to be featured in our National Program Book which is distributed to hundreds of contestants throughout the week and published to our social media.</p>
+        <p>Sponsor payments may be made by email invoice or by check. Checks should include the contestant's name in the memo line and be addressed to <strong>Landry Productions LLC, PO Box 1151, Billerica, MA 01821</strong>.</p>
+        <p><strong>About American Coed.</strong> Using the fun and excitement of pageantry, we're teaching women across the country important life skills and shaping the leaders of tomorrow. At American Coed we strive to create a family-friendly atmosphere where our contestants can experience the thrill of competition but leave with friendships and values that will last a lifetime. With competitions based on public speaking, interview, and poise in front of an audience, we aim to provide foundational skills that will serve our contestants well in their personal, academic, and professional lives for years to come.</p>
+        <p><strong>Connect With American Coed</strong><br/>
+          Web: <a href="https://missamericancoed.com" target="_blank" rel="noopener">missamericancoed.com</a><br/>
+          Email: info@missamericancoed.com</p>
+        <p class="signoff">— Provided by the Miss American Coed organization.</p>
       </div>
     </div>
   </section>
@@ -895,24 +1682,31 @@
     <div class="section-inner">
       <div class="connect-head">
         <div class="reveal">
-          <div class="section-eyebrow">— 04 / Connect</div>
+          <div class="section-eyebrow">— 06 / Connect</div>
           <h2>Stay in <em>touch.</em></h2>
         </div>
-        <p class="connect-tag reveal delay-1">Follow along through the reign, the road to nationals, and every classroom in between.</p>
+        <p class="connect-tag reveal delay-1">Follow along through the reign, the road to Nationals, and every classroom in between.</p>
       </div>
       <div class="socials">
         <a href="https://www.instagram.com/alexisfryepageantry/" target="_blank" rel="noopener" class="social reveal delay-1">
           <div class="social-label">— Pageantry</div>
           <div>
             <div class="social-handle">@alexisfryepageantry</div>
-            <div class="social-arrow">Follow on Instagram →</div>
+            <div class="social-arrow">Instagram →</div>
           </div>
         </a>
         <a href="https://www.instagram.com/growwith_stem/" target="_blank" rel="noopener" class="social reveal delay-2">
-          <div class="social-label">— Grow with STEM</div>
+          <div class="social-label">— Grow With STEM</div>
           <div>
             <div class="social-handle">@growwith_stem</div>
-            <div class="social-arrow">Follow on Instagram →</div>
+            <div class="social-arrow">Instagram →</div>
+          </div>
+        </a>
+        <a href="mailto:alexishfrye@gmail.com" class="social reveal delay-3">
+          <div class="social-label">— Direct Email</div>
+          <div>
+            <div class="social-handle">alexishfrye<br/>@gmail.com</div>
+            <div class="social-arrow">Send Email →</div>
           </div>
         </a>
       </div>
@@ -925,7 +1719,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-mark">Alexis <em>Frye.</em></div>
-      <p>Miss Massachusetts Teen Coed · 2026</p>
+      <p>Miss Massachusetts Teen Coed · 2026 · <a href="mailto:alexishfrye@gmail.com">alexishfrye@gmail.com</a></p>
     </div>
     <div class="footer-meta">
       © 2026 · All Rights Reserved
@@ -934,9 +1728,116 @@
 </footer>
 
 <script>
+  // ============================================================
+  //  PAST APPEARANCES — Edit this list to add new entries.
+  // ============================================================
+  // To add a new appearance:
+  //   1. Upload the photo to your GitHub repo (same folder as index.html)
+  //   2. Add a new entry below with the filename
+  //   3. Commit your changes — slideshow updates automatically
+  //
+  // Each entry needs:
+  //   - title:       the event name
+  //   - meta:        location · date (one line)
+  //   - description: 1–2 sentences about what you did
+  //   - image:       photo filename (leave "" for a text-only slide)
+  // ============================================================
+  const appearances = [
+    {
+      title: "National Anthem Performance",
+      meta: "Local Football Game · Massachusetts",
+      description: "Singing the national anthem before kickoff — one of my favorite ways to represent the Commonwealth and the title.",
+      image: ""
+    },
+    {
+      title: "Grow With STEM Workshop",
+      meta: "Community Library · Massachusetts",
+      description: "Hands-on STEM activities and a candid talk about numeric dyslexia — proof that learning differences don't close doors, they open new ones.",
+      image: ""
+    },
+    {
+      title: "Classroom Visit & Career Talk",
+      meta: "Elementary School · Massachusetts",
+      description: "Reading with students, answering questions about engineering, and showing them what's possible when curiosity meets persistence.",
+      image: ""
+    },
+    {
+      title: "Community Volunteer Day",
+      meta: "Local Charity Event · Massachusetts",
+      description: "Volunteering alongside community members in service of a cause greater than any title — and that's exactly the point of the crown.",
+      image: ""
+    }
+  ];
+
+  // === SLIDESHOW ENGINE ===
+  let currentSlide = 0;
+  let slideInterval;
+  const SLIDE_DURATION = 5500;
+
+  function renderSlides() {
+    const slideshow = document.getElementById('slideshow');
+    const dots = document.getElementById('slideDots');
+    slideshow.innerHTML = '';
+    dots.innerHTML = '';
+
+    appearances.forEach((item, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide' + (item.image ? ' has-image' : '') + (i === 0 ? ' active' : '');
+      if (item.image) slide.style.setProperty('--slide-img', `url('${item.image}')`);
+
+      slide.innerHTML = `
+        <div class="slide-num">${String(i + 1).padStart(2, '0')} / ${String(appearances.length).padStart(2, '0')}</div>
+        <div class="slide-mark">✦</div>
+        <div class="slide-meta">${item.meta}</div>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      `;
+      slideshow.appendChild(slide);
+
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.onclick = () => goToSlide(i);
+      dots.appendChild(dot);
+    });
+  }
+
+  function goToSlide(i) {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+    currentSlide = i;
+    restartInterval();
+  }
+
+  function nextSlide() { goToSlide((currentSlide + 1) % appearances.length); }
+  function prevSlide() { goToSlide((currentSlide - 1 + appearances.length) % appearances.length); }
+
+  function startInterval() {
+    slideInterval = setInterval(() => {
+      goToSlide((currentSlide + 1) % appearances.length);
+    }, SLIDE_DURATION);
+  }
+  function restartInterval() { clearInterval(slideInterval); startInterval(); }
+  function pauseSlides() { clearInterval(slideInterval); }
+  function resumeSlides() { startInterval(); }
+
+  renderSlides();
+  startInterval();
+
+  // === SPONSOR LETTER TOGGLE ===
+  function toggleLetter() {
+    const letter = document.getElementById('sponsorLetter');
+    const btn = document.getElementById('letterBtn');
+    const isOpen = letter.classList.toggle('show');
+    btn.textContent = isOpen ? 'Hide Full Letter' : 'Read the Full Sponsor Letter';
+    if (isOpen) letter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
   // === FORM SUBMISSION (Formspree) ===
-  // Submissions go through Formspree, which forwards them to your inbox
-  // WITHOUT exposing your email address publicly.
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjwzpkr';
 
   function toggleOther() {
@@ -967,7 +1868,9 @@
     if (formData.get('eventType') === 'Other' && formData.get('eventTypeOther')) {
       formData.set('eventType', 'Other: ' + formData.get('eventTypeOther'));
     }
-    formData.set('_subject', 'Appearance Request — ' + formData.get('eventType') + ' on ' + formData.get('date'));
+
+    const priorityFlag = formData.get('isPriority') ? '[PRIORITY] ' : '';
+    formData.set('_subject', priorityFlag + 'Appearance Request — ' + formData.get('eventType') + ' on ' + formData.get('date'));
 
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
